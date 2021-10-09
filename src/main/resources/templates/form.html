@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Form</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+</head>
+<body>
+
+	<div class="container">
+		<h1>Choses à faire ! !</h1><br><br>
+		
+			<form method="post"  th:object=${todo} th:action="@{/form}">
+				<ul>
+					<li>
+						<label for="description"/>Description du todo</label>
+						<input type="text" id="description" th:field="*{description}" placeholder="description"/>
+					</li>
+					<li>
+						<label for="delai"/>Délai du todo</label>
+						<input type="text" id="delai" th:field="*{delai}" placeholder="delai"/>
+					</li>
+					<li>
+        				<label>Lieu</label>
+      					<select class="form-control" required th:field="*{lieu}" >
+      					<option th:each="lieu:${@todoListContextApplication.getLieux()}" 
+      		        	th:value="${lieu.id}" th:text="${lieu.libelle}"></option>
+      					</select> 
+					</li>
+				</ul>
+				<input type="submit" value="Valider">
+			</form><br><br>
+
+		    <form class="btn btn-primary" method="get" th:action="@{/todos}">
+	        <button type="submit">Voir la liste des todos</button>
+	    </form>
+	 </div>
+		
+</body>
+</html>

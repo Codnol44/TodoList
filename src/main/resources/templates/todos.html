@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Liste</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+</head>
+
+<body>
+	
+	<div class="container">
+		<h1>Liste</h1>
+		
+			<h2>Liste des todos :</h2><br><br>
+			<table class="table table-striped">
+				<tr>
+					<th>Description</th>
+					<th>Délai</th>
+					<th>Lieu prévu</th>
+				</tr>
+				
+				<tr th:each="todo: ${todos}"> 
+						<td th:text="${todo.description}"></td>  
+						<td th:text="${todo.delai}"></td>
+						<td th:text="${todo.lieu.libelle}"></td> 
+						<td><a th:href="@{/del(id=${todo.id})}">Supprimer</a></td>
+						<td><a th:href="@{/up(id=${todo.id})}">Modifier</a></td>
+					</div>
+				</tr>
+			</table>
+			
+	    <form class="btn btn-success" method="get" th:action="@{/form}">
+	        <button type="submit">Création nouveau todo</button>
+	    </form>
+	</div>
+
+</body>
+</html>
