@@ -8,7 +8,7 @@ Programme en JavaEE + Spring Boot + Mysql de gestion d'un todo list en modèle C
 
 Technologies Used :
 
-TODOLIST : JavaEE + Spring Boot + Mysql.
+JavaEE + Spring Boot + Mysql.
 
 MIT Licence:
 
