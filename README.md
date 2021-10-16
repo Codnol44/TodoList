@@ -1,5 +1,3 @@
-README.md
-
 TODOLIST : JavaEE + Spring Boot + Mysql.
 
 ![Screenshot](capture3.png)
