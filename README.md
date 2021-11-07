@@ -1,5 +1,7 @@
 TODOLIST : JavaEE + Spring Boot + Mysql.
 
+Précision : connexion sur port 8090 !
+
 ![Screenshot](capture3.png)
 
 Description :
